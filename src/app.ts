@@ -1,3 +1,4 @@
+import { ListRouter } from './entity/list/listRouter';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import {Routes} from './config/routes';
@@ -15,6 +16,7 @@ class App {
     private config() {
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({extended: false}));
+        this.app.use('/lists', ListRouter)
     }
 }
 
