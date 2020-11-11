@@ -1,3 +1,4 @@
+import { List } from './../entity/list/list.model';
 import { database } from './../config/database';
 import { Sequelize, Model, BuildOptions, DataTypes } from 'sequelize';
 
@@ -24,6 +25,7 @@ Test.init(
         sequelize: database
     }
 );
+Test.belongsTo(List);
 Test.sync({ alter: true })
     .then(() => {
         console.log('Created => Test');

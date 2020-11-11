@@ -1,3 +1,4 @@
+import { Article } from './../article/article.model';
 import { database } from './../../config/database';
 import { DataTypes, Model } from "sequelize";
 
@@ -12,6 +13,8 @@ export class List extends Model {
     public picture_url!: string;
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
+    public readonly getArticles!: any;
+    public readonly articles?: Article;
 }
 List.init(
     {
@@ -35,6 +38,7 @@ List.init(
         sequelize: database,
     }
 );
+
 List.sync({ alter: true })
     .then(() => {
         console.log('Created => List');
@@ -42,5 +46,4 @@ List.sync({ alter: true })
     })
     .catch((err) => {
         console.log('List ERROR => ', err);
-
     })
