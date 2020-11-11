@@ -15,12 +15,12 @@ export class ListController {
 
     create(req: Request, res: Response) {
         const params: ListType = req.body;
-
         List.create<List>(params)
             .then((list) => {
                 res.status(201).json(list);
             })
             .catch((err: Error) => {
+                console.log('POST ERR => ', err)
                 res.status(500).json(err);
             });
     }

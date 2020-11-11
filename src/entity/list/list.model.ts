@@ -35,7 +35,7 @@ List.init(
         sequelize: database,
     }
 );
-List.sync({ force: true })
+List.sync({ alter: true })
     .then(() => {
         console.log('Created => List');
 

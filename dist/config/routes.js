@@ -9,6 +9,7 @@ class Routes {
     routes(app) {
         app.route("/").get(this.nodesController.index);
         app.route("/nodes").get(this.nodesController.index);
+        // app.use('/lists', ListRouter)
     }
 }
 exports.Routes = Routes;

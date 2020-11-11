@@ -1,9 +1,9 @@
 import { ListController } from './list.controller';
 export class ListRouter {
     private listController = new ListController();
-
-    public route(app: any) {
-        app.get('/', this.listController.index);
-        app.post('/', this.listController.create)
+  private defaultUrl = '/lists/'
+    public routes(app: any) {
+        app.get(this.defaultUrl, this.listController.index);
+        app.post(this.defaultUrl, this.listController.create)
     }
 }

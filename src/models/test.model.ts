@@ -24,7 +24,7 @@ Test.init(
         sequelize: database
     }
 );
-Test.sync({ force: true })
+Test.sync({ alter: true })
     .then(() => {
         console.log('Created => Test');
     })
